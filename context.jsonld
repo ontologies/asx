@@ -7,9 +7,39 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "terms": "http://www.w3.org/2003/06/sw-vocab-status/ns#",
     "nostr": "https://w3id.org/nostr#",
-    "Proxy": "nostr:Proxy",
-    "proxyOf": {
-      "@id": "nostr:proxyOf",
+    "Proxy": "nostr:Product",
+    "Proxy": "nostr:Review",
+    "Proxy": "nostr:Ratin",
+    "price": {
+      "@id": "nostr:price",
+      "@type": "xsd:integer"
+    },
+    "currency": {
+      "@id": "nostr:currency",
+      "@type": "xsd:integer"
+    },
+    "price": {
+      "@id": "nostr:price",
+      "@type": "xsd:integer"
+    },
+    "ratingValue": {
+      "@id": "nostr:ratingValue",
+      "@type": "xsd:integer"
+    },
+    "bestRating": {
+      "@id": "nostr:bestRating",
+      "@type": "xsd:integer"
+    },
+    "worstRating": {
+      "@id": "nostr:worstRating",
+      "@type": "xsd:integer"
+    },
+    "reviewCount": {
+      "@id": "nostr:reviewCount",
+      "@type": "xsd:integer"
+    },
+    "availability": {
+      "@id": "nostr:availability",
       "@type": "xsd:string"
     }
   }

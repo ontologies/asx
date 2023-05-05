@@ -1,9 +1,9 @@
 {
   "@context": {
     "dc": "http://purl.org/dc/elements/1.1/",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-asx#",
     "owl": "http://www.w3.org/2002/07/owl#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "xsd": "http://www.w3.org/2001/XMLasx#",
     "terms": "http://www.w3.org/2003/06/sw-vocab-status/ns#",
     "asx": "https://w3id.org/asx#",
     "description": {
@@ -49,32 +49,105 @@
     {
       "@id": "asx:",
       "@type": "owl:Ontology",
-      "description": "This vocabulary contains experimental extensions for the Activity Streams vocab.",
-      "title": "asx vocabulary"
+      "description": "This vocabulary contains experimental extensions for the Activity Streams vocabulary.",
+      "title": "ASX Vocabulary"
     },
     {
-      "@id": "asx:Proxy",
-      "@type": "rdfs:Class",
-      "comment": "Proxy class.",
-      "label": "Proxy",
+      "@id": "asx:Product",
+      "@type": "Class",
+      "label": "Product",
+      "comment": "A product available for purchase.",
       "term_status": "stable"
     },
     {
-      "@id": "asx:proxyOf",
+      "@id": "asx:Review",
+      "@type": "Class",
+      "label": "Review",
+      "comment": "A review of a product or service.",
+      "term_status": "stable"
+    },
+    {
+      "@id": "asx:Rating",
+      "@type": "Class",
+      "label": "Rating",
+      "comment": "A rating given to a product or service.",
+      "term_status": "stable"
+    },
+    {
+      "@id": "asx:price",
       "@type": [
-        "rdfs:Property"
+        "Property"
       ],
-      "comment": "asx proxyOf 64 char lower case hex.",
-      "domain": {
-        "@id": "asx:Event"
-      },
-      "isDefinedBy": {
-        "@id": "asx:"
-      },
-      "label": "pubkey",
-      "range": {
-        "@id": "xsd:string"
-      },
+      "label": "price",
+      "domain": "asx:Product",
+      "range": "xsd:decimal",
+      "comment": "The price in decimal.",
+      "term_status": "stable"
+    },
+    {
+      "@id": "asx:currency",
+      "@type": [
+        "Property"
+      ],
+      "label": "currency",
+      "domain": "asx:Product",
+      "range": "xsd:string",
+      "comment": "The ISO currency code.",
+      "term_status": "stable"
+    },
+    {
+      "@id": "asx:ratingValue",
+      "@type": [
+        "Property"
+      ],
+      "label": "ratingValue",
+      "domain": "asx:Rating",
+      "range": "xsd:integer",
+      "comment": "Rating from 0 to 10.",
+      "term_status": "stable"
+    },
+    {
+      "@id": "asx:bestRating",
+      "@type": [
+        "Property"
+      ],
+      "label": "bestRating",
+      "domain": "asx:Rating",
+      "range": "xsd:integer",
+      "comment": "The Best rating, 10 max.",
+      "term_status": "stable"
+    },
+    {
+      "@id": "asx:worstRating",
+      "@type": [
+        "Property"
+      ],
+      "label": "worstRating",
+      "domain": "asx:Rating",
+      "range": "xsd:integer",
+      "comment": "The worst rating, 0 max.",
+      "term_status": "stable"
+    },
+    {
+      "@id": "asx:reviewCount",
+      "@type": [
+        "Property"
+      ],
+      "label": "reviewCount",
+      "domain": "asx:Product",
+      "range": "xsd:integer",
+      "comment": "The number of reviews.",
+      "term_status": "stable"
+    },
+    {
+      "@id": "asx:availability",
+      "@type": [
+        "Property"
+      ],
+      "label": "availability",
+      "domain": "asx:Product",
+      "range": "xsd:string",
+      "comment": "The availability of the item.",
       "term_status": "stable"
     }
   ]
