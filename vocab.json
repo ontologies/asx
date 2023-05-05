@@ -1,0 +1,81 @@
+{
+  "@context": {
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "terms": "http://www.w3.org/2003/06/sw-vocab-status/ns#",
+    "asx": "https://w3id.org/asx#",
+    "description": {
+      "@id": "dc:description",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "dc:title",
+      "@type": "xsd:string"
+    },
+    "comment": {
+      "@id": "rdfs:comment",
+      "@type": "xsd:string"
+    },
+    "label": {
+      "@id": "rdfs:label",
+      "@type": "xsd:string"
+    },
+    "term_status": {
+      "@id": "terms:term_status",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "rdf:type",
+      "@type": "@id"
+    },
+    "domain": {
+      "@id": "rdfs:domain",
+      "@type": "@id"
+    },
+    "range": {
+      "@id": "rdfs:range",
+      "@type": "@id"
+    },
+    "isDefinedBy": {
+      "@id": "rdfs:isDefinedBy",
+      "@type": "@id"
+    },
+    "Property": "rdfs:Property",
+    "Class": "rdfs:Class"
+  },
+  "@graph": [
+    {
+      "@id": "asx:",
+      "@type": "owl:Ontology",
+      "description": "This vocabulary contains experimental extensions for the Activity Streams vocab.",
+      "title": "asx vocabulary"
+    },
+    {
+      "@id": "asx:Proxy",
+      "@type": "rdfs:Class",
+      "comment": "Proxy class.",
+      "label": "Proxy",
+      "term_status": "stable"
+    },
+    {
+      "@id": "asx:proxyOf",
+      "@type": [
+        "rdfs:Property"
+      ],
+      "comment": "asx proxyOf 64 char lower case hex.",
+      "domain": {
+        "@id": "asx:Event"
+      },
+      "isDefinedBy": {
+        "@id": "asx:"
+      },
+      "label": "pubkey",
+      "range": {
+        "@id": "xsd:string"
+      },
+      "term_status": "stable"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "@context": {
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "terms": "http://www.w3.org/2003/06/sw-vocab-status/ns#",
+    "nostr": "https://w3id.org/nostr#",
+    "description": {
+      "@id": "dc:description",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "dc:title",
+      "@type": "xsd:string"
+    },
+    "comment": {
+      "@id": "rdfs:comment",
+      "@type": "xsd:string"
+    },
+    "label": {
+      "@id": "rdfs:label",
+      "@type": "xsd:string"
+    },
+    "term_status": {
+      "@id": "terms:term_status",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "rdf:type",
+      "@type": "@id"
+    },
+    "domain": {
+      "@id": "rdfs:domain",
+      "@type": "@id"
+    },
+    "range": {
+      "@id": "rdfs:range",
+      "@type": "@id"
+    },
+    "isDefinedBy": {
+      "@id": "rdfs:isDefinedBy",
+      "@type": "@id"
+    },
+    "Property": "rdfs:Property",
+    "Class": "rdfs:Class"
+  },
+  "@graph": [
+    {
+      "@id": "nostr:",
+      "@type": "owl:Ontology",
+      "description": "Nostr vocabulary.",
+      "title": "Nostr vocabulary"
+    },
+    {
+      "@id": "nostr:Event",
+      "@type": "rdfs:Class",
+      "comment": "An nostr event as lower case 64 character hex string.",
+      "label": "Event",
+      "term_status": "stable"
+    },
+    {
+      "@id": "nostr:Relay",
+      "@type": "rdfs:Class",
+      "comment": "A nostr Relay as ws or wss URI.",
+      "label": "Relay",
+      "term_status": "stable"
+    },
+    {
+      "@id": "nostr:pubkey",
+      "@type": [
+        "rdfs:Property"
+      ],
+      "comment": "Nostr pubkey 64 char lower case hex.",
+      "domain": {
+        "@id": "nostr:Event"
+      },
+      "isDefinedBy": {
+        "@id": "nostr:"
+      },
+      "label": "pubkey",
+      "range": {
+        "@id": "xsd:string"
+      },
+      "term_status": "stable"
+    },
+    {
+      "@id": "nostr:created_at",
+      "@type": [
+        "rdfs:Property"
+      ],
+      "comment": "created_at unix timestamp.",
+      "domain": {
+        "@id": "nostr:Event"
+      },
+      "isDefinedBy": {
+        "@id": "nostr:"
+      },
+      "label": "created_at",
+      "range": {
+        "@id": "xsd:integer"
+      },
+      "term_status": "stable"
+    },
+    {
+      "@id": "nostr:kind",
+      "@type": [
+        "rdfs:Property"
+      ],
+      "comment": "kind of event as an integer.",
+      "domain": {
+        "@id": "nostr:Event"
+      },
+      "isDefinedBy": {
+        "@id": "nostr:"
+      },
+      "label": "kind",
+      "range": {
+        "@id": "xsd:integer"
+      },
+      "term_status": "stable"
+    },
+    {
+      "@id": "nostr:tags",
+      "@type": [
+        "rdfs:Property"
+      ],
+      "comment": "array of arrays containing nostr tags.",
+      "domain": {
+        "@id": "nostr:Event"
+      },
+      "isDefinedBy": {
+        "@id": "nostr:"
+      },
+      "label": "tags",
+      "range": {
+        "@id": "owl:Thing"
+      },
+      "term_status": "stable"
+    },
+    {
+      "@id": "nostr:content",
+      "@type": [
+        "rdfs:Property"
+      ],
+      "comment": "content of event as an integer.",
+      "domain": {
+        "@id": "nostr:Event"
+      },
+      "isDefinedBy": {
+        "@id": "nostr:"
+      },
+      "label": "content",
+      "range": {
+        "@id": "xsd:string"
+      },
+      "term_status": "stable"
+    },
+    {
+      "@id": "nostr:sig",
+      "@type": [
+        "rdfs:Property"
+      ],
+      "comment": "Schnorr signature of an event.",
+      "domain": {
+        "@id": "nostr:Event"
+      },
+      "isDefinedBy": {
+        "@id": "nostr:"
+      },
+      "label": "sig",
+      "range": {
+        "@id": "xsd:string"
+      },
+      "term_status": "stable"
+    }
+  ]
+}
