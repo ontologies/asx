@@ -1,6 +1,6 @@
 {
   "name": "asx",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "ontologies-asx",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,5 @@
     "url": "https://github.com/ontologies/asx/issues"
   },
   "homepage": "https://github.com/ontologies/asx#readme",
-  "dependencies": {
-  }
+  "dependencies": {}
 }
