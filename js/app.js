@@ -42,10 +42,10 @@ function Category(props) {
 
 function App() {
   const ontology = json.find(item => item['@type'] === 'owl:Ontology')
-  const items = json.filter(item => item['@type'].includes('rdfs:Class'))
+  const items = json.filter(item => item['@type'].includes('Class'))
 
   const properties = json.filter(item =>
-    item['@type'].includes('rdfs:Property')
+    item['@type'].includes('Property')
   )
 
   const communityGroupUrl = 'https://socialhub.activitypub.rocks/'
