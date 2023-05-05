@@ -51,7 +51,7 @@ function App() {
   const communityGroupUrl = 'https://socialhub.activitypub.rocks/'
 
   return html`
-  <a href="https://socialhub.activitypub.rocks/" class="github-fork">
+  <a href="https://github.com/ontologies/asx" class="github-fork">
   <img
     decoding="async"
     loading="lazy"
