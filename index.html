@@ -63,88 +63,319 @@
             "title": "ASX Vocabulary"
           },
           {
-            "@id": "asx:Product",
-            "@type": "Class",
-            "label": "Product",
-            "comment": "A product available for purchase.",
+            "@id": "asx:manuallyApprovesFollowers",
+            "@type": "Property",
+            "label": "manuallyApprovesFollowers",
+            "domain": "asx:Actor",
+            "range": "xsd:boolean",
+            "comment": "Indicates if actor manually approves followers. Default is false.",
             "term_status": "stable"
           },
           {
-            "@id": "asx:Review",
-            "@type": "Class",
-            "label": "Review",
-            "comment": "A review of a product or service.",
+            "@id": "asx:movedTo",
+            "@type": "Property",
+            "label": "movedTo",
+            "domain": "asx:Actor",
+            "range": "asx:Actor",
+            "comment": "Indicates the new location for the user.",
             "term_status": "stable"
           },
           {
-            "@id": "asx:Rating",
+            "@id": "toot:featured",
+            "@type": "Property",
+            "label": "featured",
+            "domain": "asx:Actor",
+            "range": "asx:Collection",
+            "comment": "A list of pinned notes.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "toot:discoverable",
+            "@type": "Property",
+            "label": "discoverable",
+            "domain": "asx:Actor",
+            "range": "xsd:boolean",
+            "comment": "Determines whether a user is shown in the account directory. Default is false.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:tag",
+            "@type": "Property",
+            "label": "tag",
+            "domain": "asx:Object",
+            "range": "asx:Object",
+            "comment": "Holds Emoji and Hashtag objects.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:attachments",
+            "@type": "Property",
+            "label": "attachments",
+            "domain": "asx:Object",
+            "range": "asx:Object",
+            "comment": "Holds PropertyValue and IdentityProof objects.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:icon",
+            "@type": "Property",
+            "label": "icon",
+            "domain": "asx:Actor",
+            "range": "asx:Object",
+            "comment": "Used for avatar.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:image",
+            "@type": "Property",
+            "label": "image",
+            "domain": "asx:Actor",
+            "range": "asx:Object",
+            "comment": "Used for header image.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:Hashtag",
             "@type": "Class",
-            "label": "Rating",
-            "comment": "A rating given to a product or service.",
+            "label": "Hashtag",
+            "comment": "Represents a hashtag.",
             "term_status": "stable"
           },
 
           {
-            "@id": "asx:price",
-            "@type": ["Property"],
-            "label": "price",
-            "domain": "asx:Product",
-            "range": "xsd:decimal",
-            "comment": "The price in decimal.",
+            "@id": "asx:href",
+            "@type": "Property",
+            "label": "href",
+            "domain": "asx:Hashtag",
+            "range": "xsd:anyURI",
+            "comment": "Href of the hashtag.",
             "term_status": "stable"
           },
           {
-            "@id": "asx:currency",
-            "@type": ["Property"],
-            "label": "currency",
-            "domain": "asx:Product",
+            "@id": "toot:Emoji",
+            "@type": "Class",
+            "label": "Emoji",
+            "comment": "Represents an Emoji.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:icon",
+            "@type": "Property",
+            "label": "icon",
+            "domain": "toot:Emoji",
+            "range": "asx:Image",
+            "comment": "Icon representing the emoji.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:updated",
+            "@type": "Property",
+            "label": "updated",
+            "domain": "toot:Emoji",
+            "range": "xsd:dateTime",
+            "comment": "Timestamp of when the emoji was updated.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "schema:PropertyValue",
+            "@type": "Class",
+            "label": "PropertyValue",
+            "comment": "Represents a property value.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:name",
+            "@type": "Property",
+            "label": "name",
+            "domain": "schema:PropertyValue",
             "range": "xsd:string",
-            "comment": "The ISO currency code.",
+            "comment": "Name of the property.",
             "term_status": "stable"
           },
           {
-            "@id": "asx:ratingValue",
-            "@type": ["Property"],
-            "label": "ratingValue",
-            "domain": "asx:Rating",
-            "range": "xsd:integer",
-            "comment": "Rating from 0 to 10.",
-            "term_status": "stable"
-          },
-          {
-            "@id": "asx:bestRating",
-            "@type": ["Property"],
-            "label": "bestRating",
-            "domain": "asx:Rating",
-            "range": "xsd:integer",
-            "comment": "The Best rating, 10 max.",
-            "term_status": "stable"
-          },
-          {
-            "@id": "asx:worstRating",
-            "@type": ["Property"],
-            "label": "worstRating",
-            "domain": "asx:Rating",
-            "range": "xsd:integer",
-            "comment": "The worst rating, 0 max.",
-            "term_status": "stable"
-          },
-          {
-            "@id": "asx:reviewCount",
-            "@type": ["Property"],
-            "label": "reviewCount",
-            "domain": "asx:Product",
-            "range": "xsd:integer",
-            "comment": "The number of reviews.",
-            "term_status": "stable"
-          },
-          {
-            "@id": "asx:availability",
-            "@type": ["Property"],
-            "label": "availability",
-            "domain": "asx:Product",
+            "@id": "asx:value",
+            "@type": "Property",
+            "label": "value",
+            "domain": "schema:PropertyValue",
             "range": "xsd:string",
-            "comment": "The availability of the item.",
+            "comment": "Value of the property, HTML allowed.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "toot:IdentityProof",
+            "@type": "Class",
+            "label": "IdentityProof",
+            "comment": "Represents an identity proof.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:signatureAlgorithm",
+            "@type": "Property",
+            "label": "signatureAlgorithm",
+            "domain": "toot:IdentityProof",
+            "range": "xsd:string",
+            "comment": "Provider name.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:name",
+            "@type": "Property",
+            "label": "name",
+            "domain": "toot:IdentityProof",
+            "range": "xsd:string",
+            "comment": "Username on provider.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:signatureValue",
+            "@type": "Property",
+            "label": "signatureValue",
+            "domain": "toot:IdentityProof",
+            "range": "xsd:string",
+            "comment": "Provider-specific format.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:sensitive",
+            "@type": "Property",
+            "label": "sensitive",
+            "domain": "asx:Note",
+            "range": "xsd:boolean",
+            "comment": "Determines whether media attachments should be hidden by default. Default is false.",
+            "term_status": "stable"
+          },
+
+          {
+            "@id": "asx:tag",
+            "@type": "Property",
+            "label": "tag",
+            "domain": "asx:Note",
+            "range": "asx:Object",
+            "comment": "Holds Mention, Hashtag, and Emoji objects.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:summary",
+            "@type": "Property",
+            "label": "summary",
+            "domain": "asx:Note",
+            "range": "xsd:string",
+            "comment": "Holds content warning.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:Question",
+            "@type": "Class",
+            "label": "Question",
+            "comment": "Represents a poll status.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:attachment",
+            "@type": "Property",
+            "label": "attachment",
+            "domain": "asx:Question",
+            "range": "asx:Object",
+            "comment": "Must be empty if present.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "toot:votersCount",
+            "@type": "Property",
+            "label": "votersCount",
+            "domain": "asx:Question",
+            "range": "xsd:integer",
+            "comment": "The number of unique responses (counts people rather than votes).",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:anyOf",
+            "@type": "Property",
+            "label": "anyOf",
+            "domain": "asx:Question",
+            "range": "asx:Object",
+            "comment": "Used for multiple-choice polls.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:oneOf",
+            "@type": "Property",
+            "label": "oneOf",
+            "domain": "asx:Question",
+            "range": "asx:Object",
+            "comment": "Used for single-choice polls.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:name",
+            "@type": "Property",
+            "label": "name",
+            "domain": "asx:Note",
+            "range": "xsd:string",
+            "comment": "Option text.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:replies",
+            "@type": "Property",
+            "label": "replies",
+            "domain": "asx:Note",
+            "range": "asx:Collection",
+            "comment": "Only the totalItems field is present, representing the number of votes",
+
+            "term_status": "stable"
+          },
+
+          {
+            "@id": "asx:Document",
+            "@type": "Class",
+            "label": "Document",
+            "comment": "Represents a media attachment.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "toot:focalPoint",
+            "@type": "Property",
+            "label": "focalPoint",
+            "domain": "asx:Document",
+            "range": "xsd:string",
+            "comment": "2-element array of numbers between 0 and 1 inclusive (x and y coordinates).",
+            "term_status": "stable"
+          },
+          {
+            "@id": "toot:blurhash",
+            "@type": "Property",
+            "label": "blurhash",
+            "domain": "asx:Document",
+            "range": "xsd:string",
+            "comment": "Represents the blurhash string.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:name",
+            "@type": "Property",
+            "label": "name",
+            "domain": "asx:Document",
+            "range": "xsd:string",
+            "comment": "Alternative text for accessibility (media description).",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:mediaType",
+            "@type": "Property",
+            "label": "mediaType",
+            "domain": "asx:Document",
+            "range": "xsd:string",
+            "comment": "Media type of the attachment.",
+            "term_status": "stable"
+          },
+          {
+            "@id": "asx:url",
+            "@type": "Property",
+            "label": "url",
+            "domain": "asx:Document",
+            "range": "xsd:anyURI",
+            "comment": "URL of the attachment.",
             "term_status": "stable"
           }
         ]

@@ -6,41 +6,48 @@
     "owl": "http://www.w3.org/2002/07/owl#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "terms": "http://www.w3.org/2003/06/sw-vocab-status/ns#",
-    "nostr": "https://w3id.org/nostr#",
-    "Proxy": "nostr:Product",
-    "Proxy": "nostr:Review",
-    "Proxy": "nostr:Ratin",
-    "price": {
-      "@id": "nostr:price",
-      "@type": "xsd:integer"
+    "as": "https://www.w3.org/ns/activitystreams#",
+    "toot": "http://joinmastodon.org/ns#",
+    "schema": "http://schema.org/",
+    "Actor": "as:Actor",
+    "Note": "as:Note",
+    "Question": "as:Question",
+    "Document": "as:Document",
+    "Hashtag": "as:Hashtag",
+    "Emoji": "toot:Emoji",
+    "PropertyValue": "schema:PropertyValue",
+    "IdentityProof": "toot:IdentityProof",
+    "manuallyApprovesFollowers": {
+      "@id": "as:manuallyApprovesFollowers",
+      "@type": "xsd:boolean"
     },
-    "currency": {
-      "@id": "nostr:currency",
-      "@type": "xsd:integer"
+    "movedTo": "as:movedTo",
+    "alsoKnownAs": "as:alsoKnownAs",
+    "featured": "toot:featured",
+    "discoverable": {
+      "@id": "toot:discoverable",
+      "@type": "xsd:boolean"
     },
-    "price": {
-      "@id": "nostr:price",
-      "@type": "xsd:integer"
+    "tag": "as:tag",
+    "attachments": "as:attachments",
+    "icon": "as:icon",
+    "image": "as:image",
+    "name": "as:name",
+    "sensitive": {
+      "@id": "as:sensitive",
+      "@type": "xsd:boolean"
     },
-    "ratingValue": {
-      "@id": "nostr:ratingValue",
-      "@type": "xsd:integer"
-    },
-    "bestRating": {
-      "@id": "nostr:bestRating",
-      "@type": "xsd:integer"
-    },
-    "worstRating": {
-      "@id": "nostr:worstRating",
-      "@type": "xsd:integer"
-    },
-    "reviewCount": {
-      "@id": "nostr:reviewCount",
-      "@type": "xsd:integer"
-    },
-    "availability": {
-      "@id": "nostr:availability",
-      "@type": "xsd:string"
-    }
+    "atomUri": "ostatus:atomUri",
+    "inReplyToAtomUri": "ostatus:inReplyToAtomUri",
+    "conversation": "ostatus:conversation",
+    "summary": "as:summary",
+    "attachment": "as:attachment",
+    "votersCount": "toot:votersCount",
+    "anyOf": "as:anyOf",
+    "oneOf": "as:oneOf",
+    "focalPoint": "toot:focalPoint",
+    "blurhash": "toot:blurhash",
+    "mediaType": "as:mediaType",
+    "url": "as:url"
   }
 }
