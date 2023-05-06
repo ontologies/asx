@@ -22,7 +22,6 @@
       "@type": "xsd:boolean"
     },
     "movedTo": "as:movedTo",
-    "alsoKnownAs": "as:alsoKnownAs",
     "featured": "toot:featured",
     "discoverable": {
       "@id": "toot:discoverable",
@@ -32,7 +31,6 @@
     "attachments": "as:attachments",
     "icon": "as:icon",
     "image": "as:image",
-    "name": "as:name",
     "sensitive": {
       "@id": "as:sensitive",
       "@type": "xsd:boolean"
@@ -47,7 +45,6 @@
     "oneOf": "as:oneOf",
     "focalPoint": "toot:focalPoint",
     "blurhash": "toot:blurhash",
-    "mediaType": "as:mediaType",
-    "url": "as:url"
+    "mediaType": "as:mediaType"
   }
 }
