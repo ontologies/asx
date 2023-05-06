@@ -1,6 +1,6 @@
 {
   "name": "ontologies-asx",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "ontologies-asx",
   "main": "index.js",
   "scripts": {
